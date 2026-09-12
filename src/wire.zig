@@ -382,9 +382,8 @@ pub fn decodeRepeated(
     ).pointer.child;
     comptime std.debug.assert(ResultList == std.ArrayList(Result));
 
-    const current_capacity = result.capacity;
-    errdefer result.shrinkAndFree(allocator, current_capacity);
-
+    // Roll back elements, not capacity: shrinkAndFree takes a length, and
+    // spare capacity must never become live (potentially already freed) items.
     const current_items = result.items.len;
     errdefer result.shrinkRetainingCapacity(current_items);
 
@@ -665,6 +664,7 @@ pub fn decodeMessage(
                     } else false;
                     errdefer if (comptime field_ti == .optional) {
                         if (is_null) {
+                            @field(result, field.name).?.deinit(allocator);
                             @field(result, field.name) = null;
                         }
                     };
@@ -673,6 +673,7 @@ pub fn decodeMessage(
                     if (tag.wire_type == .len) {
                         const len, const c = try decodeScalar(.int32, reader);
                         consumed += c;
+                        if (len < 0) return error.InvalidInput;
 
                         consumed += try decodeRepeated(
                             if (comptime field_ti == .optional)
@@ -709,16 +710,21 @@ pub fn decodeMessage(
                     } else false;
                     errdefer if (comptime field_ti == .optional) {
                         if (is_null) {
+                            @field(result, field.name).?.deinit(allocator);
                             @field(result, field.name) = null;
                         }
                     };
                     const len: ?usize = if (tag.wire_type == .len) b: {
                         const len, const c = try decodeScalar(.int32, reader);
                         consumed += c;
+                        if (len < 0) return error.InvalidInput;
                         break :b @intCast(len);
                     } else null;
                     consumed += try decodeRepeated(
-                        &@field(result, field.name),
+                        if (comptime field_ti == .optional)
+                            &@field(result, field.name).?
+                        else
+                            &@field(result, field.name),
                         allocator,
                         repeated,
                         reader,
