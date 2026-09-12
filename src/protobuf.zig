@@ -976,6 +976,7 @@ pub fn deinitField(
                                     item.deinit(allocator);
                                 }
                             },
+                            .bool, .@"enum", .float, .int => {},
                             else => unreachable,
                         }
                     }
@@ -1098,6 +1099,7 @@ pub fn decode(
 ) (DecodingError || std.Io.Reader.Error || std.mem.Allocator.Error)!T {
     var result: T = undefined;
     internal_init(T, &result);
+    errdefer deinit(allocator, &result);
 
     _ = try wire.decodeMessage(&result, allocator, reader, .{});
 
@@ -1225,4 +1227,5 @@ test "incorrect data - decode" {
 test {
     _ = wire;
     _ = json;
+    _ = @import("decode_error_test.zig");
 }
