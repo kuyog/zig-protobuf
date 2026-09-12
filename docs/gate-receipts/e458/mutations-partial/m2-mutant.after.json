@@ -1,0 +1,9 @@
+{
+  "head": "e4584b43c99ddb2047153c2697b8d49f75b75930",
+  "files": {
+    "src/wire.zig": "60cbec1012f5449096ae1ab1711ac3e4bedc18057d43a25e81ceb25eef96cf2c",
+    "src/protobuf.zig": "6868eb5166f0877870db0315e22d649cf1efc791465e671dfdc9f1c729db3b60",
+    "src/decode_error_test.zig": "1debf64ec283b56bcd7aac3348e62bd4fc9f3edda590cd98ca2ea71f27ebc625"
+  },
+  "diff": "diff --git a/src/wire.zig b/src/wire.zig\nindex e74f0e9..df4c74d 100644\n--- a/src/wire.zig\n+++ b/src/wire.zig\n@@ -673,7 +673,6 @@ pub fn decodeMessage(\n                     if (tag.wire_type == .len) {\n                         const len, const c = try decodeScalar(.int32, reader);\n                         consumed += c;\n-                        if (len < 0) return error.InvalidInput;\n \n                         consumed += try decodeRepeated(\n                             if (comptime field_ti == .optional)\n"
+}

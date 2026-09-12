@@ -1,0 +1,1939 @@
+1/18 protobuf.test_0...OK
+2/18 wire.test_0...OK
+3/18 decode_error_test.test.decode ownership: valid owned fields survive until caller deinit...OK
+4/18 decode_error_test.test.decode ownership: later scalar EOF releases all prior owned fields...OK
+[DebugAllocator] (err): memory address 0x102320000 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10217537f in decodeMessage__anon_39630 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+
+[DebugAllocator] (err): memory address 0x102320001 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:464:47: 0x102164a83 in decodeRepeated__anon_36766 (test)
+            const consumed = try decodeMessage(
+                                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x102320002 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:464:47: 0x102164a83 in decodeRepeated__anon_36766 (test)
+            const consumed = try decodeMessage(
+                                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x102320003 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/Io/Reader.zig:740:37: 0x10217a2cf in readAlloc (test)
+    const dest = try allocator.alloc(u8, len);
+                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:396:51: 0x1021786ff in decodeRepeated__anon_39750 (test)
+                const bytes = try reader.readAlloc(allocator, options.bytes.?);
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x102175eab in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x102320004 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:803:71: 0x10217644b in decodeMessage__anon_39630 (test)
+                            const message_consumed = try decodeMessage(
+                                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x102320005 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:775:71: 0x102176aa7 in decodeMessage__anon_39630 (test)
+                            const message_consumed = try decodeMessage(
+                                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x102320006 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:1033:77: 0x102177347 in decodeMessage__anon_39630 (test)
+                                        const m_consumed = try decodeMessage(
+                                                                            ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x102360000 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:757:57: 0x10217689f in decodeMessage__anon_39630 (test)
+                                    try allocator.create(SubMessage);
+                                                        ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+
+[DebugAllocator] (err): memory address 0x102300000 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10216765f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x1021673e7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216708f in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x102166e8f in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:30: 0x102164923 in decodeRepeated__anon_36766 (test)
+            try result.append(
+                             ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x102300100 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x102168eab in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x10216893b in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216864b in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x1021684c7 in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:407:38: 0x102168083 in decodeRepeated__anon_36731 (test)
+                    try result.append(allocator, decoded);
+                                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:678:55: 0x102175c2f in decodeMessage__anon_39630 (test)
+                        consumed += try decodeRepeated(
+                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x102300200 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10217927f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x102178ff7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x102178cab in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x1021789bb in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:399:34: 0x102178783 in decodeRepeated__anon_39750 (test)
+                try result.append(allocator, bytes);
+                                 ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x102175eab in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:118:24: 0x1021817b3 in test.decode ownership: later scalar EOF releases all prior owned fields (test)
+    try decodeMalformed(allocator, complete ++ truncated_number);
+                       ^
+(additional stack frames may have been skipped...)
+
+5/18 decode_error_test.test.decode ownership: complete message allocation failures release partial state...
+fail_index: 1/11
+allocated bytes: 1
+freed bytes: 0
+allocations: 1
+deallocations: 0
+allocation that was made to fail: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10216765f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x1021673e7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216708f in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x102166e8f in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:30: 0x102164923 in decodeRepeated__anon_36766 (test)
+            try result.append(
+                             ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:93:38: 0x10218095b in decodeComplete (test)
+    var decoded = try protobuf.decode(Message, &reader, gpa);
+                                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1133:69: 0x10218150b in checkAllAllocationFailures__anon_40787 (test)
+        if (@call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args)) |_| {
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:122:47: 0x102181737 in test.decode ownership: complete message allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeComplete, .{});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+FAIL (MemoryLeakDetected)
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:300:82: 0x1020663b7 in allocBytesWithAlignment__anon_9208 (test)
+    const byte_ptr = self.rawAlloc(byte_count, alignment, return_address) orelse return error.OutOfMemory;
+                                                                                 ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:286:5: 0x102083cfb in allocWithSizeAndAlignment__anon_10584 (test)
+    return self.allocBytesWithAlignment(alignment, byte_count, return_address);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:274:55: 0x102167a27 in allocAdvancedWithRetAddr (test)
+    const ptr: [*]align(a.toByteUnits()) T = @ptrCast(try self.allocWithSizeAndAlignment(@sizeOf(T), a, n, return_address));
+                                                      ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:262:5: 0x102167a9b in alignedAlloc__anon_37284 (test)
+    return self.allocAdvancedWithRetAddr(T, alignment, n, @returnAddress());
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:36: 0x102167707 in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                   ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:13: 0x102167427 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+            ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:13: 0x102167113 in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+            ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:34: 0x102166f37 in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                 ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:13: 0x102164a0f in decodeRepeated__anon_36766 (test)
+            try result.append(
+            ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:33: 0x10217593f in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:9: 0x102174db3 in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+        ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:93:19: 0x102180a13 in decodeComplete (test)
+    var decoded = try protobuf.decode(Message, &reader, gpa);
+                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1156:21: 0x1021816a7 in checkAllAllocationFailures__anon_40787 (test)
+                    return error.MemoryLeakDetected;
+                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:122:5: 0x102181783 in test.decode ownership: complete message allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeComplete, .{});
+    ^
+[DebugAllocator] (err): memory address 0x108a20000 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10217537f in decodeMessage__anon_39630 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:93:38: 0x10218095b in decodeComplete (test)
+    var decoded = try protobuf.decode(Message, &reader, gpa);
+                                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1133:69: 0x10218150b in checkAllAllocationFailures__anon_40787 (test)
+        if (@call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args)) |_| {
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:122:47: 0x102181737 in test.decode ownership: complete message allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeComplete, .{});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+
+6/18 decode_error_test.test.decode ownership: truncated repeated child allocation failures release partial state...
+fail_index: 1/12
+allocated bytes: 1
+freed bytes: 0
+allocations: 1
+deallocations: 0
+allocation that was made to fail: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10216765f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x1021673e7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216708f in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x102166e8f in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:30: 0x102164923 in decodeRepeated__anon_36766 (test)
+            try result.append(
+                             ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1133:69: 0x10217eb57 in checkAllAllocationFailures__anon_40587 (test)
+        if (@call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args)) |_| {
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:47: 0x102180893 in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+FAIL (MemoryLeakDetected)
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:300:82: 0x1020663b7 in allocBytesWithAlignment__anon_9208 (test)
+    const byte_ptr = self.rawAlloc(byte_count, alignment, return_address) orelse return error.OutOfMemory;
+                                                                                 ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:286:5: 0x102083cfb in allocWithSizeAndAlignment__anon_10584 (test)
+    return self.allocBytesWithAlignment(alignment, byte_count, return_address);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:274:55: 0x102167a27 in allocAdvancedWithRetAddr (test)
+    const ptr: [*]align(a.toByteUnits()) T = @ptrCast(try self.allocWithSizeAndAlignment(@sizeOf(T), a, n, return_address));
+                                                      ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:262:5: 0x102167a9b in alignedAlloc__anon_37284 (test)
+    return self.allocAdvancedWithRetAddr(T, alignment, n, @returnAddress());
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:36: 0x102167707 in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                   ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:13: 0x102167427 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+            ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:13: 0x102167113 in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+            ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:34: 0x102166f37 in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                 ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:13: 0x102164a0f in decodeRepeated__anon_36766 (test)
+            try result.append(
+            ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:33: 0x10217593f in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:9: 0x102174db3 in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+        ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:86:39: 0x102174a1b in expectFailure__anon_39463 (test)
+        if (err == error.OutOfMemory) return err;
+                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:5: 0x10217e91b in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1156:21: 0x10217ecf3 in checkAllAllocationFailures__anon_40587 (test)
+                    return error.MemoryLeakDetected;
+                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:5: 0x1021808df in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+    ^
+[DebugAllocator] (err): memory address 0x108a40000 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10217537f in decodeMessage__anon_39630 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:47: 0x102180893 in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a40001 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:464:47: 0x102164a83 in decodeRepeated__anon_36766 (test)
+            const consumed = try decodeMessage(
+                                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:47: 0x102180893 in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a40002 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:464:47: 0x102164a83 in decodeRepeated__anon_36766 (test)
+            const consumed = try decodeMessage(
+                                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:47: 0x102180893 in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a40003 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/Io/Reader.zig:740:37: 0x10217a2cf in readAlloc (test)
+    const dest = try allocator.alloc(u8, len);
+                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:396:51: 0x1021786ff in decodeRepeated__anon_39750 (test)
+                const bytes = try reader.readAlloc(allocator, options.bytes.?);
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x102175eab in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:47: 0x102180893 in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a40004 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:803:71: 0x10217644b in decodeMessage__anon_39630 (test)
+                            const message_consumed = try decodeMessage(
+                                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:47: 0x102180893 in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a40005 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:775:71: 0x102176aa7 in decodeMessage__anon_39630 (test)
+                            const message_consumed = try decodeMessage(
+                                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:47: 0x102180893 in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a40006 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:1033:77: 0x102177347 in decodeMessage__anon_39630 (test)
+                                        const m_consumed = try decodeMessage(
+                                                                            ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:47: 0x102180893 in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a40008 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10217537f in decodeMessage__anon_39630 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1133:69: 0x10217eb57 in checkAllAllocationFailures__anon_40587 (test)
+        if (@call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args)) |_| {
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:47: 0x102180893 in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a80000 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:757:57: 0x10217689f in decodeMessage__anon_39630 (test)
+                                    try allocator.create(SubMessage);
+                                                        ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:126:47: 0x102180893 in test.decode ownership: truncated repeated child allocation failures release partial state (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ truncated_child});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a60000 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10216765f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x1021673e7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216708f in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x102166e8f in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:30: 0x102164923 in decodeRepeated__anon_36766 (test)
+            try result.append(
+                             ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a60100 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x102168eab in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x10216893b in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216864b in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x1021684c7 in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:407:38: 0x102168083 in decodeRepeated__anon_36731 (test)
+                    try result.append(allocator, decoded);
+                                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:678:55: 0x102175c2f in decodeMessage__anon_39630 (test)
+                        consumed += try decodeRepeated(
+                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108a60200 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10217927f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x102178ff7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x102178cab in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x1021789bb in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:399:34: 0x102178783 in decodeRepeated__anon_39750 (test)
+                try result.append(allocator, bytes);
+                                 ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x102175eab in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+(additional stack frames may have been skipped...)
+
+7/18 decode_error_test.test.decode ownership: malformed merged submessages and oneof release partial state...
+fail_index: 1/12
+allocated bytes: 1
+freed bytes: 0
+allocations: 1
+deallocations: 0
+allocation that was made to fail: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10216765f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x1021673e7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216708f in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x102166e8f in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:30: 0x102164923 in decodeRepeated__anon_36766 (test)
+            try result.append(
+                             ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1133:69: 0x10217eb57 in checkAllAllocationFailures__anon_40587 (test)
+        if (@call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args)) |_| {
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:51: 0x1021806cb in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+FAIL (MemoryLeakDetected)
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:300:82: 0x1020663b7 in allocBytesWithAlignment__anon_9208 (test)
+    const byte_ptr = self.rawAlloc(byte_count, alignment, return_address) orelse return error.OutOfMemory;
+                                                                                 ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:286:5: 0x102083cfb in allocWithSizeAndAlignment__anon_10584 (test)
+    return self.allocBytesWithAlignment(alignment, byte_count, return_address);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:274:55: 0x102167a27 in allocAdvancedWithRetAddr (test)
+    const ptr: [*]align(a.toByteUnits()) T = @ptrCast(try self.allocWithSizeAndAlignment(@sizeOf(T), a, n, return_address));
+                                                      ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:262:5: 0x102167a9b in alignedAlloc__anon_37284 (test)
+    return self.allocAdvancedWithRetAddr(T, alignment, n, @returnAddress());
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:36: 0x102167707 in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                   ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:13: 0x102167427 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+            ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:13: 0x102167113 in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+            ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:34: 0x102166f37 in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                 ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:13: 0x102164a0f in decodeRepeated__anon_36766 (test)
+            try result.append(
+            ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:33: 0x10217593f in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:9: 0x102174db3 in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+        ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:86:39: 0x102174a1b in expectFailure__anon_39463 (test)
+        if (err == error.OutOfMemory) return err;
+                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:5: 0x10217e91b in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1156:21: 0x10217ecf3 in checkAllAllocationFailures__anon_40587 (test)
+                    return error.MemoryLeakDetected;
+                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:9: 0x102180747 in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+        ^
+[DebugAllocator] (err): memory address 0x108aa0000 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10217537f in decodeMessage__anon_39630 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:51: 0x1021806cb in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108aa0001 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:464:47: 0x102164a83 in decodeRepeated__anon_36766 (test)
+            const consumed = try decodeMessage(
+                                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:51: 0x1021806cb in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108aa0002 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:464:47: 0x102164a83 in decodeRepeated__anon_36766 (test)
+            const consumed = try decodeMessage(
+                                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:51: 0x1021806cb in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108aa0003 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/Io/Reader.zig:740:37: 0x10217a2cf in readAlloc (test)
+    const dest = try allocator.alloc(u8, len);
+                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:396:51: 0x1021786ff in decodeRepeated__anon_39750 (test)
+                const bytes = try reader.readAlloc(allocator, options.bytes.?);
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x102175eab in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:51: 0x1021806cb in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108aa0005 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:775:71: 0x102176aa7 in decodeMessage__anon_39630 (test)
+                            const message_consumed = try decodeMessage(
+                                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:51: 0x1021806cb in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108aa0006 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:1033:77: 0x102177347 in decodeMessage__anon_39630 (test)
+                                        const m_consumed = try decodeMessage(
+                                                                            ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:51: 0x1021806cb in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108aa0007 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:803:71: 0x10217644b in decodeMessage__anon_39630 (test)
+                            const message_consumed = try decodeMessage(
+                                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:51: 0x1021806cb in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108aa0008 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10217537f in decodeMessage__anon_39630 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1133:69: 0x10217eb57 in checkAllAllocationFailures__anon_40587 (test)
+        if (@call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args)) |_| {
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:51: 0x1021806cb in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108ae0000 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:757:57: 0x10217689f in decodeMessage__anon_39630 (test)
+                                    try allocator.create(SubMessage);
+                                                        ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:137:51: 0x1021806cb in test.decode ownership: malformed merged submessages and oneof release partial state (test)
+        try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ suffix});
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108ac0000 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10216765f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x1021673e7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216708f in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x102166e8f in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:30: 0x102164923 in decodeRepeated__anon_36766 (test)
+            try result.append(
+                             ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108ac0100 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x102168eab in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x10216893b in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216864b in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x1021684c7 in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:407:38: 0x102168083 in decodeRepeated__anon_36731 (test)
+                    try result.append(allocator, decoded);
+                                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:678:55: 0x102175c2f in decodeMessage__anon_39630 (test)
+                        consumed += try decodeRepeated(
+                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108ac0200 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10217927f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x102178ff7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x102178cab in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x1021789bb in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:399:34: 0x102178783 in decodeRepeated__anon_39750 (test)
+                try result.append(allocator, bytes);
+                                 ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x102175eab in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+(additional stack frames may have been skipped...)
+
+8/18 decode_error_test.test.decode ownership: repeated child EOF preserves retained items with spare capacity...OK
+9/18 decode_error_test.test.decode ownership: packed scalar EOF rolls back only appended values...OK
+10/18 decode_error_test.test.decode ownership: repeated string EOF releases earlier strings...
+fail_index: 1/12
+allocated bytes: 1
+freed bytes: 0
+allocations: 1
+deallocations: 0
+allocation that was made to fail: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10216765f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x1021673e7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216708f in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x102166e8f in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:30: 0x102164923 in decodeRepeated__anon_36766 (test)
+            try result.append(
+                             ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1133:69: 0x10217eb57 in checkAllAllocationFailures__anon_40587 (test)
+        if (@call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args)) |_| {
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:47: 0x10217ed8b in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+FAIL (MemoryLeakDetected)
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:300:82: 0x1020663b7 in allocBytesWithAlignment__anon_9208 (test)
+    const byte_ptr = self.rawAlloc(byte_count, alignment, return_address) orelse return error.OutOfMemory;
+                                                                                 ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:286:5: 0x102083cfb in allocWithSizeAndAlignment__anon_10584 (test)
+    return self.allocBytesWithAlignment(alignment, byte_count, return_address);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:274:55: 0x102167a27 in allocAdvancedWithRetAddr (test)
+    const ptr: [*]align(a.toByteUnits()) T = @ptrCast(try self.allocWithSizeAndAlignment(@sizeOf(T), a, n, return_address));
+                                                      ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/mem/Allocator.zig:262:5: 0x102167a9b in alignedAlloc__anon_37284 (test)
+    return self.allocAdvancedWithRetAddr(T, alignment, n, @returnAddress());
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:36: 0x102167707 in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                   ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:13: 0x102167427 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+            ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:13: 0x102167113 in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+            ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:34: 0x102166f37 in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                 ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:13: 0x102164a0f in decodeRepeated__anon_36766 (test)
+            try result.append(
+            ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:33: 0x10217593f in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:9: 0x102174db3 in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+        ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:86:39: 0x102174a1b in expectFailure__anon_39463 (test)
+        if (err == error.OutOfMemory) return err;
+                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:5: 0x10217e91b in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1156:21: 0x10217ecf3 in checkAllAllocationFailures__anon_40587 (test)
+                    return error.MemoryLeakDetected;
+                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:5: 0x10217edd7 in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+    ^
+[DebugAllocator] (err): memory address 0x108b00000 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10217537f in decodeMessage__anon_39630 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:47: 0x10217ed8b in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b00001 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:464:47: 0x102164a83 in decodeRepeated__anon_36766 (test)
+            const consumed = try decodeMessage(
+                                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:47: 0x10217ed8b in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b00002 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:464:47: 0x102164a83 in decodeRepeated__anon_36766 (test)
+            const consumed = try decodeMessage(
+                                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:47: 0x10217ed8b in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b00003 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/Io/Reader.zig:740:37: 0x10217a2cf in readAlloc (test)
+    const dest = try allocator.alloc(u8, len);
+                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:396:51: 0x1021786ff in decodeRepeated__anon_39750 (test)
+                const bytes = try reader.readAlloc(allocator, options.bytes.?);
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x102175eab in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:47: 0x10217ed8b in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b00004 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:803:71: 0x10217644b in decodeMessage__anon_39630 (test)
+                            const message_consumed = try decodeMessage(
+                                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:47: 0x10217ed8b in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b00005 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:775:71: 0x102176aa7 in decodeMessage__anon_39630 (test)
+                            const message_consumed = try decodeMessage(
+                                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:47: 0x10217ed8b in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b00006 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10216697f in decodeMessage__anon_36875 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:1033:77: 0x102177347 in decodeMessage__anon_39630 (test)
+                                        const m_consumed = try decodeMessage(
+                                                                            ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:47: 0x10217ed8b in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b00007 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:592:48: 0x10217537f in decodeMessage__anon_39630 (test)
+                            try allocator.alloc(u8, @intCast(len))
+                                               ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1133:69: 0x10217eb57 in checkAllAllocationFailures__anon_40587 (test)
+        if (@call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args)) |_| {
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:47: 0x10217ed8b in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b40000 leaked: 
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:757:57: 0x10217689f in decodeMessage__anon_39630 (test)
+                                    try allocator.create(SubMessage);
+                                                        ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:185:47: 0x10217ed8b in test.decode ownership: repeated string EOF releases earlier strings (test)
+    try std.testing.checkAllAllocationFailures(allocator, decodeMalformed, .{complete ++ "\x22\x04x"});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10213fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10213f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x10213d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b20000 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10216765f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x1021673e7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216708f in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x102166e8f in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:458:30: 0x102164923 in decodeRepeated__anon_36766 (test)
+            try result.append(
+                             ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x10217574b in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b20100 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x102168eab in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x10216893b in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x10216864b in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x1021684c7 in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:407:38: 0x102168083 in decodeRepeated__anon_36731 (test)
+                    try result.append(allocator, decoded);
+                                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:678:55: 0x102175c2f in decodeMessage__anon_39630 (test)
+                        consumed += try decodeRepeated(
+                                                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+(additional stack frames may have been skipped...)
+
+[DebugAllocator] (err): memory address 0x108b20200 leaked: 
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1235:56: 0x10217927f in ensureTotalCapacityPrecise (test)
+                const new_memory = try gpa.alignedAlloc(T, alignment, new_capacity);
+                                                       ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1211:51: 0x102178ff7 in ensureTotalCapacity (test)
+            return self.ensureTotalCapacityPrecise(gpa, growCapacity(new_capacity));
+                                                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1265:41: 0x102178cab in addOne (test)
+            try self.ensureTotalCapacity(gpa, newlen);
+                                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:904:49: 0x1021789bb in append (test)
+            const new_item_ptr = try self.addOne(gpa);
+                                                ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:399:34: 0x102178783 in decodeRepeated__anon_39750 (test)
+                try result.append(allocator, bytes);
+                                 ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:723:51: 0x102175eab in decodeMessage__anon_39630 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1103:31: 0x102174c2f in decode__anon_39482 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x1021748bf in expectFailure__anon_39463 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:110:22: 0x10217e8ab in decodeMalformed (test)
+    try expectFailure(Message, gpa, bytes, error.EndOfStream);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10217e9df in checkAllAllocationFailures__anon_40587 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+(additional stack frames may have been skipped...)
+
+11/18 decode_error_test.test.decode ownership: packed scalar length overrun preserves retained values...OK
+12/18 decode_error_test.test.decode ownership: invalid packed enum preserves retained values...OK
+13/18 decode_error_test.test.decode ownership: negative packed length is refused before allocation...OK
+14/18 decode_error_test.test.decode ownership: negative repeated child length is refused before allocation...OK
+15/18 decode_error_test.test.decode ownership: negative repeated string length is refused before allocation...OK
+16/18 decode_error_test.test.decode ownership: newly present optional packed list frees storage on rollback...OK
+17/18 decode_error_test.test.decode ownership: newly present optional repeated list frees storage on rollback...OK
+18/18 decode_error_test.test.decode ownership: valid optional lists remain caller-owned...OK
+14 passed; 0 skipped; 4 failed.
+48 errors were logged.
+5 tests leaked memory.
+error: the following test command failed with exit code 1:
+/private/tmp/protobuf-e458-mutations.1xFbKO/zig-cache/o/4592399a56708150aa81ebf56fa6fbe0/test --seed=0x7dec7189

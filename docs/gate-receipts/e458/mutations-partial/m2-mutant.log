@@ -1,0 +1,27 @@
+1/3 protobuf.test_0...OK
+2/3 wire.test_0...OK
+3/3 decode_error_test.test.decode ownership: negative packed length is refused before allocation...thread 264728507 panic: integer does not fit in destination type
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:685:41: 0x100a65133 in decodeMessage__anon_37339 (test)
+                            .{ .bytes = @intCast(len) },
+                                        ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1104:31: 0x100a63957 in decode__anon_36378 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x100a6196f in expectFailure__anon_36339 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:217:22: 0x100a61bdf in test.decode ownership: negative packed length is refused before allocation (test)
+    try expectFailure(Message, std.testing.failing_allocator, "\x1a" ++ negative_length, error.InvalidInput);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x100a3fd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x100a3f7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x100a3d5a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+error: the following test command terminated with signal ABRT:
+/private/tmp/protobuf-e458-mutations.1xFbKO/zig-cache/o/0a2c67a4bd56f49fe6322cd1f325c0a4/test --seed=0xdeaf55fd

@@ -1,0 +1,66 @@
+1/3 protobuf.test_0...OK
+2/3 wire.test_0...OK
+3/3 decode_error_test.test.decode ownership: repeated child EOF preserves retained items with spare capacity...thread 264726237 panic: reached unreachable code
+error return context:
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/Io/Reader.zig:1796:5: 0x1025ccfcf in endingRebase (test)
+    return error.EndOfStream;
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/Io/Reader.zig:1408:5: 0x10257f717 in rebase (test)
+    return r.vtable.rebase(r, capacity);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/Io/Reader.zig:1122:5: 0x10257f3ff in fillUnbuffered (test)
+    try rebase(r, n);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/Io/Reader.zig:1110:5: 0x10257f31b in fill (test)
+    return fillUnbuffered(r, n);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/Io/Reader.zig:1150:5: 0x1025b1837 in peekByte (test)
+    try fill(r, 1);
+    ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/Io/Reader.zig:1158:20: 0x1025b1557 in takeByte (test)
+    const result = try peekByte(r);
+                   ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:224:23: 0x1026a92e7 in decodeScalar__anon_37604 (test)
+            const b = try reader.takeByte();
+                      ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:636:46: 0x1026a4867 in decodeMessage__anon_38113 (test)
+                        const val, const c = try decodeScalar(scalar, reader);
+                                             ^
+
+stack trace:
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/debug.zig:420:14: 0x10257c043 in assert (test)
+    if (!ok) unreachable; // assertion failure
+             ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1134:19: 0x1026a8247 in shrinkAndFreePrecise (test)
+            assert(new_len <= self.items.len);
+                  ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/array_list.zig:1120:38: 0x1026a804b in shrinkAndFree (test)
+            self.shrinkAndFreePrecise(gpa, new_len) catch |e| switch (e) {
+                                     ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:388:34: 0x1026a7c7b in decodeRepeated__anon_38033 (test)
+    errdefer result.shrinkAndFree(allocator, current_capacity);
+                                 ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:725:51: 0x10269fb2b in decodeMessage__anon_36459 (test)
+                    consumed += try decodeRepeated(
+                                                  ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:150:27: 0x102699f6f in retainedChildRollback (test)
+    if (wire.decodeMessage(&message, gpa, &bad_reader, .{})) |_| {
+                          ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/testing.zig:1124:69: 0x10269a8ef in checkAllAllocationFailures__anon_36339 (test)
+        try @call(.auto, test_fn, .{failing_allocator_inst.allocator()} ++ extra_args);
+                                                                    ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:169:47: 0x10269ac67 in test.decode ownership: repeated child EOF preserves retained items with spare capacity (test)
+    try std.testing.checkAllAllocationFailures(allocator, retainedChildRollback, .{});
+                                              ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x102677d1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x1026777fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x1026755a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+error: the following test command terminated with signal ABRT:
+/private/tmp/protobuf-e458-mutations.1xFbKO/zig-cache/o/29dbf5889b34917e0e7144c7afdb36d2/test --seed=0x4a7b97ec

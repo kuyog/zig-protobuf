@@ -1,0 +1,9 @@
+{
+  "head": "e4584b43c99ddb2047153c2697b8d49f75b75930",
+  "files": {
+    "src/wire.zig": "85047aa10239609ea37fa09cdfa046b3e9db7a24b0724fc171b34486a6ab7790",
+    "src/protobuf.zig": "6868eb5166f0877870db0315e22d649cf1efc791465e671dfdc9f1c729db3b60",
+    "src/decode_error_test.zig": "1debf64ec283b56bcd7aac3348e62bd4fc9f3edda590cd98ca2ea71f27ebc625"
+  },
+  "diff": "diff --git a/src/wire.zig b/src/wire.zig\nindex e74f0e9..130ccd1 100644\n--- a/src/wire.zig\n+++ b/src/wire.zig\n@@ -384,6 +384,8 @@ pub fn decodeRepeated(\n \n     // Roll back elements, not capacity: shrinkAndFree takes a length, and\n     // spare capacity must never become live (potentially already freed) items.\n+    const current_capacity = result.capacity;\n+    errdefer result.shrinkAndFree(allocator, current_capacity);\n     const current_items = result.items.len;\n     errdefer result.shrinkRetainingCapacity(current_items);\n \n"
+}

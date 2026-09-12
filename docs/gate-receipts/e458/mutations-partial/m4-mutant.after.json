@@ -1,0 +1,9 @@
+{
+  "head": "e4584b43c99ddb2047153c2697b8d49f75b75930",
+  "files": {
+    "src/wire.zig": "e9e978d51c1d26f62ebb3d9389cc68308efa0c5d602c15ed5f973f76df5d9d17",
+    "src/protobuf.zig": "e42f54612de6fdaa82bff40e816638f17550153623a3837fdb88898c62e8eac7",
+    "src/decode_error_test.zig": "1debf64ec283b56bcd7aac3348e62bd4fc9f3edda590cd98ca2ea71f27ebc625"
+  },
+  "diff": "diff --git a/src/protobuf.zig b/src/protobuf.zig\nindex 05b15a4..796be5b 100644\n--- a/src/protobuf.zig\n+++ b/src/protobuf.zig\n@@ -1099,7 +1099,6 @@ pub fn decode(\n ) (DecodingError || std.Io.Reader.Error || std.mem.Allocator.Error)!T {\n     var result: T = undefined;\n     internal_init(T, &result);\n-    errdefer deinit(allocator, &result);\n \n     _ = try wire.decodeMessage(&result, allocator, reader, .{});\n \n"
+}

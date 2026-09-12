@@ -1,0 +1,9 @@
+{
+  "head": "e4584b43c99ddb2047153c2697b8d49f75b75930",
+  "files": {
+    "src/wire.zig": "e9e978d51c1d26f62ebb3d9389cc68308efa0c5d602c15ed5f973f76df5d9d17",
+    "src/protobuf.zig": "6868eb5166f0877870db0315e22d649cf1efc791465e671dfdc9f1c729db3b60",
+    "src/decode_error_test.zig": "1debf64ec283b56bcd7aac3348e62bd4fc9f3edda590cd98ca2ea71f27ebc625"
+  },
+  "diff": ""
+}

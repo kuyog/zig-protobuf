@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/opt/homebrew/Cellar/zig/0.16.0_1/bin/zig",
+    "test",
+    "src/protobuf.zig",
+    "-O",
+    "Debug",
+    "--test-filter",
+    "decode ownership: repeated child EOF preserves retained items with spare capacity",
+    "--cache-dir",
+    "/private/tmp/protobuf-e458-mutations.1xFbKO/zig-cache",
+    "--global-cache-dir",
+    "/tmp/protobuf-decode-340078b-gates.cfddUO/zig-global-cache"
+  ],
+  "pid": 56796,
+  "started_unix": 1789225838.47386,
+  "ended_unix": 1789225840.440297,
+  "elapsed_seconds": 1.966417375,
+  "deadline_seconds": 180.0,
+  "forced": false,
+  "interrupted": false,
+  "exit_code": 1
+}

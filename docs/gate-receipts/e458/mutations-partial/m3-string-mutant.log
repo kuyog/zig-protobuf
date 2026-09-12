@@ -1,0 +1,27 @@
+1/3 protobuf.test_0...OK
+2/3 wire.test_0...OK
+3/3 decode_error_test.test.decode ownership: negative repeated string length is refused before allocation...thread 264730844 panic: integer does not fit in destination type
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/wire.zig:720:34: 0x1004914ef in decodeMessage__anon_37339 (test)
+                        break :b @intCast(len);
+                                 ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/protobuf.zig:1104:31: 0x10048f957 in decode__anon_36378 (test)
+    _ = try wire.decodeMessage(&result, allocator, reader, .{});
+                              ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:79:24: 0x10048d96f in expectFailure__anon_36339 (test)
+    if (protobuf.decode(T, &reader, gpa)) |decoded| {
+                       ^
+/Users/dallindyer/Dev/flutter_source/zig-protobuf-e458-mutations/src/decode_error_test.zig:225:22: 0x10048dbdf in test.decode ownership: negative repeated string length is refused before allocation (test)
+    try expectFailure(Message, std.testing.failing_allocator, "\x22" ++ negative_length, error.InvalidInput);
+                     ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:291:25: 0x10046bd1f in mainTerminal (test)
+        if (test_fn.func()) |_| {
+                        ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/compiler/test_runner.zig:73:28: 0x10046b7fb in main (test)
+        return mainTerminal(init);
+                           ^
+/opt/homebrew/Cellar/zig/0.16.0_1/lib/zig/std/start.zig:699:88: 0x1004695a3 in callMain (test)
+    if (fn_info.params[0].type.? == std.process.Init.Minimal) return wrapMain(root.main(.{
+                                                                                       ^
+???:?:?: 0x188d7c4e3 in start (/usr/lib/dyld)
+error: the following test command terminated with signal ABRT:
+/private/tmp/protobuf-e458-mutations.1xFbKO/zig-cache/o/fb63ce235f5e46e80c43b2e4bf83939c/test --seed=0x91310717

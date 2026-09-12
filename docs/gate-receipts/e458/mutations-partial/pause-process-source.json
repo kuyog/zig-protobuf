@@ -1,0 +1,92 @@
+{
+  "observed_at": "2026-09-12T15:15:26.550Z",
+  "scope": "pause after m4; no further gates or corpus",
+  "gate_pids": [
+    {
+      "name": "m1-baseline.run.json",
+      "pid": 56179,
+      "exit_code": 0,
+      "forced": false,
+      "interrupted": false
+    },
+    {
+      "name": "m1-mutant.run.json",
+      "pid": 56796,
+      "exit_code": 1,
+      "forced": false,
+      "interrupted": false
+    },
+    {
+      "name": "m2-baseline.run.json",
+      "pid": 57162,
+      "exit_code": 0,
+      "forced": false,
+      "interrupted": false
+    },
+    {
+      "name": "m2-mutant.run.json",
+      "pid": 57778,
+      "exit_code": 1,
+      "forced": false,
+      "interrupted": false
+    },
+    {
+      "name": "m3-child-baseline.run.json",
+      "pid": 58095,
+      "exit_code": 0,
+      "forced": false,
+      "interrupted": false
+    },
+    {
+      "name": "m3-child-mutant.run.json",
+      "pid": 58622,
+      "exit_code": 1,
+      "forced": false,
+      "interrupted": false
+    },
+    {
+      "name": "m3-string-baseline.run.json",
+      "pid": 58359,
+      "exit_code": 0,
+      "forced": false,
+      "interrupted": false
+    },
+    {
+      "name": "m3-string-mutant.run.json",
+      "pid": 59063,
+      "exit_code": 1,
+      "forced": false,
+      "interrupted": false
+    },
+    {
+      "name": "m4-mutant.run.json",
+      "pid": 59813,
+      "exit_code": 1,
+      "forced": false,
+      "interrupted": false
+    },
+    {
+      "name": "ownership-baseline.run.json",
+      "pid": 59539,
+      "exit_code": 0,
+      "forced": false,
+      "interrupted": false
+    }
+  ],
+  "live_recorded_gate_pids": [],
+  "compiler_test_executable_matches": [],
+  "head": "e4584b43c99ddb2047153c2697b8d49f75b75930",
+  "status": "",
+  "files": {
+    "src/wire.zig": "e9e978d51c1d26f62ebb3d9389cc68308efa0c5d602c15ed5f973f76df5d9d17",
+    "src/protobuf.zig": "6868eb5166f0877870db0315e22d649cf1efc791465e671dfdc9f1c729db3b60",
+    "src/decode_error_test.zig": "1debf64ec283b56bcd7aac3348e62bd4fc9f3edda590cd98ca2ea71f27ebc625"
+  },
+  "pending": [
+    "optional packed cleanup mutation",
+    "optional repeated cleanup mutation",
+    "failed repeated child cleanup mutation",
+    "retained corpus replay",
+    "consumer repins"
+  ]
+}

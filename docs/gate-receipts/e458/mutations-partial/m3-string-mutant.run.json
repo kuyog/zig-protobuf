@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/opt/homebrew/Cellar/zig/0.16.0_1/bin/zig",
+    "test",
+    "src/protobuf.zig",
+    "-O",
+    "Debug",
+    "--test-filter",
+    "decode ownership: negative repeated string length is refused before allocation",
+    "--cache-dir",
+    "/private/tmp/protobuf-e458-mutations.1xFbKO/zig-cache",
+    "--global-cache-dir",
+    "/tmp/protobuf-decode-340078b-gates.cfddUO/zig-global-cache"
+  ],
+  "pid": 59063,
+  "started_unix": 1789225911.1043599,
+  "ended_unix": 1789225913.021267,
+  "elapsed_seconds": 1.9174526250000001,
+  "deadline_seconds": 180.0,
+  "forced": false,
+  "interrupted": false,
+  "exit_code": 1
+}
