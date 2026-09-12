@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/opt/homebrew/Cellar/zig/0.16.0_1/bin/zig",
+    "build",
+    "test",
+    "-Doptimize=Debug",
+    "-j2",
+    "--summary",
+    "all",
+    "--cache-dir",
+    "/tmp/protobuf-decode-340078b-gates.cfddUO/build-zig-cache",
+    "--global-cache-dir",
+    "/tmp/protobuf-decode-340078b-gates.cfddUO/zig-global-cache"
+  ],
+  "pid": 57863,
+  "started_unix": 1789187610.4357839,
+  "ended_unix": 1789187644.929575,
+  "elapsed_seconds": 34.493764791,
+  "deadline_seconds": 180.0,
+  "forced": false,
+  "interrupted": false,
+  "exit_code": 0
+}

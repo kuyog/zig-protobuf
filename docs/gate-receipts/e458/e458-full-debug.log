@@ -1,0 +1,49 @@
+Build Summary: 26/26 steps succeeded; 166/166 tests passed
+test success
++- run test protobuf 31 pass (31 total) 326ms MaxRSS:3M
+|  +- compile test protobuf Debug native success 1s MaxRSS:295M
+|     +- run protoc success
+|     |  +- compile exe protoc-gen-zig Debug native success 2s MaxRSS:316M
+|     +- run protoc success
+|        +- compile exe protoc-gen-zig Debug native (reused)
++- run test bootstrap 2 pass (2 total) 235ms MaxRSS:2M
+|  +- compile test bootstrap Debug native success 1s MaxRSS:276M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test tests 5 pass (5 total) 247ms MaxRSS:2M
+|  +- compile test tests Debug native success 1s MaxRSS:305M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test alltypes 6 pass (6 total) 254ms MaxRSS:3M
+|  +- compile test alltypes Debug native success 2s MaxRSS:401M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test integration 14 pass (14 total) 2s MaxRSS:30M
+|  +- compile test integration Debug native success 2s MaxRSS:409M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test fixedsizes 2 pass (2 total) 383ms MaxRSS:2M
+|  +- compile test fixedsizes Debug native success 1s MaxRSS:285M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test varints 36 pass (36 total) 270ms MaxRSS:3M
+|  +- compile test varints Debug native success 1s MaxRSS:295M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test json 61 pass (61 total) 268ms MaxRSS:4M
+|  +- compile test json Debug native success 2s MaxRSS:355M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test FullName 1 pass (1 total) 259ms MaxRSS:2M
+|  +- compile test FullName Debug native success 1s MaxRSS:268M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test complex_type 2 pass (2 total) 270ms MaxRSS:3M
+|  +- compile test complex_type Debug native success 1s MaxRSS:315M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test services 6 pass (6 total) 358ms MaxRSS:2M
+   +- compile test services Debug native success 1s MaxRSS:271M
+      +- run protoc (+1 more reused dependencies)
+      +- run protoc (+1 more reused dependencies)
+

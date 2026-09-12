@@ -1,0 +1,49 @@
+Build Summary: 26/26 steps succeeded; 166/166 tests passed
+test success
++- run test protobuf 31 pass (31 total) 272ms MaxRSS:4M
+|  +- compile test protobuf ReleaseSafe native success 6s MaxRSS:376M
+|     +- run protoc success
+|     |  +- compile exe protoc-gen-zig ReleaseSafe native success 9s MaxRSS:425M
+|     +- run protoc success
+|        +- compile exe protoc-gen-zig ReleaseSafe native (reused)
++- run test bootstrap 2 pass (2 total) 405ms MaxRSS:1M
+|  +- compile test bootstrap ReleaseSafe native success 5s MaxRSS:354M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test tests 5 pass (5 total) 220ms MaxRSS:1M
+|  +- compile test tests ReleaseSafe native success 7s MaxRSS:404M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test alltypes 6 pass (6 total) 231ms MaxRSS:2M
+|  +- compile test alltypes ReleaseSafe native success 9s MaxRSS:482M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test integration 14 pass (14 total) 517ms MaxRSS:122M
+|  +- compile test integration ReleaseSafe native success 10s MaxRSS:512M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test fixedsizes 2 pass (2 total) 228ms MaxRSS:1M
+|  +- compile test fixedsizes ReleaseSafe native success 5s MaxRSS:359M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test varints 36 pass (36 total) 234ms MaxRSS:2M
+|  +- compile test varints ReleaseSafe native success 6s MaxRSS:375M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test json 61 pass (61 total) 239ms MaxRSS:3M
+|  +- compile test json ReleaseSafe native success 9s MaxRSS:481M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test FullName 1 pass (1 total) 228ms MaxRSS:1M
+|  +- compile test FullName ReleaseSafe native success 5s MaxRSS:349M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test complex_type 2 pass (2 total) 241ms MaxRSS:2M
+|  +- compile test complex_type ReleaseSafe native success 9s MaxRSS:631M
+|     +- run protoc (+1 more reused dependencies)
+|     +- run protoc (+1 more reused dependencies)
++- run test services 6 pass (6 total) 240ms MaxRSS:1M
+   +- compile test services ReleaseSafe native success 5s MaxRSS:349M
+      +- run protoc (+1 more reused dependencies)
+      +- run protoc (+1 more reused dependencies)
+

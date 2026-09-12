@@ -1,0 +1,19 @@
+1/18 protobuf.test_0...OK
+2/18 wire.test_0...OK
+3/18 decode_error_test.test.decode ownership: valid owned fields survive until caller deinit...OK
+4/18 decode_error_test.test.decode ownership: later scalar EOF releases all prior owned fields...OK
+5/18 decode_error_test.test.decode ownership: complete message allocation failures release partial state...OK
+6/18 decode_error_test.test.decode ownership: truncated repeated child allocation failures release partial state...OK
+7/18 decode_error_test.test.decode ownership: malformed merged submessages and oneof release partial state...OK
+8/18 decode_error_test.test.decode ownership: repeated child EOF preserves retained items with spare capacity...OK
+9/18 decode_error_test.test.decode ownership: packed scalar EOF rolls back only appended values...OK
+10/18 decode_error_test.test.decode ownership: repeated string EOF releases earlier strings...OK
+11/18 decode_error_test.test.decode ownership: packed scalar length overrun preserves retained values...OK
+12/18 decode_error_test.test.decode ownership: invalid packed enum preserves retained values...OK
+13/18 decode_error_test.test.decode ownership: negative packed length is refused before allocation...OK
+14/18 decode_error_test.test.decode ownership: negative repeated child length is refused before allocation...OK
+15/18 decode_error_test.test.decode ownership: negative repeated string length is refused before allocation...OK
+16/18 decode_error_test.test.decode ownership: newly present optional packed list frees storage on rollback...OK
+17/18 decode_error_test.test.decode ownership: newly present optional repeated list frees storage on rollback...OK
+18/18 decode_error_test.test.decode ownership: valid optional lists remain caller-owned...OK
+All 18 tests passed.
