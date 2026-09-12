@@ -34,8 +34,8 @@ const Message = struct {
     strings: std.ArrayList([]const u8) = .empty,
     nested: ?Child = null,
     indirect: ?*Child = null,
-    choice: ?Choice = null,
     number: u32 = 0,
+    choice: ?Choice = null,
 
     pub const _desc_table = .{
         .label = protobuf.fd(1, .{ .scalar = .string }),
@@ -44,8 +44,10 @@ const Message = struct {
         .strings = protobuf.fd(4, .{ .repeated = .{ .scalar = .string } }),
         .nested = protobuf.fd(5, .submessage),
         .indirect = protobuf.fd(6, .submessage),
-        .choice = protobuf.fd(null, .{ .oneof = Choice }),
         .number = protobuf.fd(9, .{ .scalar = .uint32 }),
+        // Keep oneof last for this ownership fixture. Unmatched oneof
+        // descriptor handling is separately tracked in fork issue #2.
+        .choice = protobuf.fd(null, .{ .oneof = Choice }),
     };
 
     pub fn deinit(self: *@This(), gpa: std.mem.Allocator) void {

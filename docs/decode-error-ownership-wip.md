@@ -2,9 +2,20 @@
 
 Base: `81959a3f735e853dbb73caeec42b4084e4b0fc72`.
 
-Status: SOURCE ONLY. No compiler, formatter, test, mutation, corpus replay, or
-consumer repin has run for this candidate. The tests below are intended checks,
-not passing evidence. This is a tracked fork, not a modified dependency cache.
+Status: bounded focused retry pending at this fixture-order checkpoint. Initial
+340078b compiled and ran focused Debug: 16 passed, 2 failed, 18 collected (16
+named plus two import tests). The valid-message control and its allocation sweep
+failed at expected scalar 6, found 0. The identical positive fixture reproduced
+that specific failure against untouched 81959a3f: 2 passed, 1 failed, 3 collected.
+No blanket base attribution follows from this single controlled comparison.
+
+The unmatched-oneof descriptor-order bug remains open and unfixed in
+https://github.com/kuyog/zig-protobuf/issues/2 . This ownership fixture explicitly
+places its ordinary scalar before its oneof in both declarations and descriptors.
+Wire bytes and all assertions are unchanged; the known-RED fixture stays in
+340078b. Runtime ownership/length code is unchanged by this checkpoint. No full
+tests, other modes, formatter, mutations, corpus replay or consumer repins have
+run. This is a tracked fork, not a modified dependency cache.
 
 ## Defect And Ownership
 
